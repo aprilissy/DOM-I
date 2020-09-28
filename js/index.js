@@ -90,3 +90,35 @@ for (let i = 0; i < navElements.length; i++) {
 // h1 content with line breaks
 const ctaH1 = document.querySelector('.cta-text h1')
 ctaH1.innerHTML = siteContent['cta']['h1'].replace(/ /g, '<br /> ')
+
+//button
+const button = document.querySelector('.cta-text button')
+button.textContent = siteContent['cta']['button']
+
+
+
+// main section content
+//h4
+
+const main = []
+
+for (const [key, value] of Object.entries(siteContent['main-content'])) {
+  main.push({
+    keys: key.split('-'),
+    value: value
+  })
+}
+console.log(main)
+
+const mainH4 = document.querySelectorAll('.text-content h4')
+const mainP = document.querySelectorAll('.text-content p')
+
+
+
+// for (let i = 0; i < mainH4.length; i++) {
+//   if (main[i][1] === 'h4') {
+//     return mainH4[i].textContent = main[i].value
+//   } else if (main[i][1] === 'content') {
+//     return mainP[i].textContent = main[i].value
+//   }
+// }
