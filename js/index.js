@@ -71,7 +71,23 @@ for (const [key, value] of Object.entries(siteContent.nav)) {
 /* 1st Way */
 for (let i = 0; i < navElements.length; i++) {
   navElements[i].textContent = navigation[i].value
+  navElements[i].style.color = 'green'
 }
+
+const pacoLink = document.createElement('a')
+pacoLink.textContent = 'Paco'
+pacoLink.href = '#'
+const append = document.querySelector('.container nav')
+append.appendChild(pacoLink)
+pacoLink.style.color = 'green'
+
+
+const monkeyLink = document.createElement('a')
+monkeyLink.textContent = 'Monkey'
+monkeyLink.href = '#'
+const prepend = document.querySelector('.container nav')
+prepend.prepend(monkeyLink)
+monkeyLink.style.color = 'green'
 
 /* 2nd Way */
 // navElements.forEach((ele, idx) => {
@@ -86,7 +102,7 @@ for (let i = 0; i < navElements.length; i++) {
 
 
 
-// cta section content
+/////////////////// cta section content
 // h1 content with line breaks
 const ctaH1 = document.querySelector('.cta-text h1')
 ctaH1.innerHTML = siteContent['cta']['h1'].replace(/ /g, '<br /> ')
