@@ -108,17 +108,22 @@ for (const [key, value] of Object.entries(siteContent['main-content'])) {
     value: value
   })
 }
-console.log(main)
 
 const mainH4 = document.querySelectorAll('.text-content h4')
 const mainP = document.querySelectorAll('.text-content p')
 
-
-
-// for (let i = 0; i < mainH4.length; i++) {
-//   if (main[i][1] === 'h4') {
-//     return mainH4[i].textContent = main[i].value
-//   } else if (main[i][1] === 'content') {
-//     return mainP[i].textContent = main[i].value
-//   }
-// }
+let j = 0;
+let k = 0;
+for (let i = 0; i < main.length; i++) {
+  // console.log([i])
+  if (main[i].keys[1] === 'h4') {
+    // console.log("h4", i, mainH4[i])
+    mainH4[j].textContent = main[i].value
+    j++
+  } else if (main[i].keys[1] === 'content') {
+    // console.log("content", i, mainP[i])
+    mainP[k].textContent = main[i].value
+    k++
+  }
+  console.log("end", i)
+}
