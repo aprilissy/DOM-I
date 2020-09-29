@@ -45,7 +45,7 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 // April's Code Begins Here:
-// Site Images
+////////////////////////// Site Images
 /* CTA Image */
 let ctaImg = document.getElementById("cta-img");
 ctaImg.setAttribute('src', siteContent["cta"]["img-src"])
@@ -56,7 +56,7 @@ middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"])
 
 
 
-// Navigation Elements
+///////////////// Navigation Elements
 const navElements = document.querySelectorAll('a')
 const navigation = []
 
@@ -97,9 +97,7 @@ button.textContent = siteContent['cta']['button']
 
 
 
-// main section content
-//h4
-
+//////////////////// main section content
 const main = []
 
 for (const [key, value] of Object.entries(siteContent['main-content'])) {
@@ -115,15 +113,39 @@ const mainP = document.querySelectorAll('.text-content p')
 let j = 0;
 let k = 0;
 for (let i = 0; i < main.length; i++) {
-  // console.log([i])
   if (main[i].keys[1] === 'h4') {
-    // console.log("h4", i, mainH4[i])
     mainH4[j].textContent = main[i].value
     j++
   } else if (main[i].keys[1] === 'content') {
-    // console.log("content", i, mainP[i])
     mainP[k].textContent = main[i].value
     k++
   }
-  console.log("end", i)
 }
+
+
+///////////////// Contact Section Content
+const contact = document.querySelector('.contact h4')
+contact.textContent = siteContent.contact['contact-h4']
+
+const contactInfo = document.querySelectorAll('.contact p')
+
+
+const address = []
+
+for (const [key, value] of Object.entries(siteContent['contact'])) {
+  address.push({
+    keys: key,
+    value: value
+  })
+}
+
+let l = 0
+for (let i = 1; i < address.length; i++) {
+  contactInfo[l].textContent = address[i].value
+  l++
+}
+
+
+/////////////// Footer Section Content
+const copyright = document.querySelector('footer p')
+copyright.textContent = siteContent['footer']['copyright']
